@@ -161,7 +161,7 @@ print(phone3[phone3.find("-")+1:])
 # String functions validation
 
 country = "KENYA"
-phone = "012367654@"
+phone = "012367654"
 
 print(country.isalpha())    # checks is the string has only alphabets a-z A-Z
 print(phone.isnumeric())    # checks if phone is a number
