@@ -69,6 +69,31 @@ else:
     print("Failed")
 
 
+# Membership and Identity Operators
+
+print("o" in "Python")
+print(3 not in [1, 2, 3, 4, 5])
+
+x = ['a', 'b', 'c']
+y = ['a', 'b', 'c']
+
+print(x == y)
+print(x is y)
 
 
+# Control Flow Statements
 
+score = 100
+submitted_project = False
+
+if score >= 90:
+    if submitted_project:
+        print("A+")
+    else:
+        print("A")
+elif score >= 70:
+    print("B")
+elif score >= 50:
+    print("C")
+else:
+    print("F")
