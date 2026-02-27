@@ -1,3 +1,5 @@
+import copy
+
 # Create Lists
 
 empty = []
@@ -68,4 +70,177 @@ print(role)
 
 name, *_, = person
 print(name)
+
+# list functions
+
+numbers = [1, 5, 2, 4, 3]
+
+print("Max:", max(numbers))
+print("Min:", min(numbers))
+print("Sum:", sum(numbers))
+print("Length:", len(numbers))
+
+print("All:", all(numbers)) # -> you will get True if the list contains all numbers
+print("All:", all([1, 0, 2]))   # 0 is considered as empty value
+print("All:", all(['a', '', 'b']))   # "" is considered as empty value also
+
+
+print("All:", any(numbers)) # -> will return True if we have at least 1 element in the list
+print("All:", any([1, 0, 2]))
+print("All:", any([0, 0, 0])) # -> false since 0 is treated as empty
+
+
+print("Count:", numbers.count(5)) # -> counts the occurences of 5
+print("Index:", numbers.index(5)) # -> returns position(index) for the first occurence of number 5
+
+
+print(4 in numbers) # using membership operator
+
+
+# Adding elements to the list
+
+letters = ['a', 'b', 'c']
+letters.append('x') # -> adds elements at the end of the list
+letters.insert(0, 'z') # -> adds elements at specified indexes
+
+print(letters)
+
+
+# Removing elements from a list
+
+letters = ['a', 'b', 'c', 'a']
+#letters.clear() # -> removes everything
+letters.remove('a') # -> searches for 'a' and removes 1st occurence
+letters.pop() # -> by default removes the last element if not given index and returns removed item
+
+print(letters)
+
+
+# Updating items in a list
+
+
+names = ['john', 'james', 'ben']
+names[0] = 'Jane'
+
+print(names)
+
+
+# Sorting a items in a list
+
+alphabets = ['c', 'a', 'b']
+alphabets.sort()    # sorts in ascending order
+print(alphabets)
+
+alphabets.sort(reverse=True)    # sorts in descending order
+print(alphabets)
+
+# sorted function
+
+new_list = sorted(alphabets)
+
+print("Original list:",alphabets)
+print("Sorted list:",new_list)
+
+# Reversing a list
+
+letters3 = ['c', 'a', 'b']
+print("Original list:", letters3)
+
+letters3.reverse()
+print("Reversed list:", letters3)
+
+
+# copying a list
+
+originalList = ['a', 'b', 'c']
+
+# shallow copy
+copiedList = originalList.copy()
+copiedList.append('z')
+
+print(originalList)
+print(copiedList)
+
+# deep copy -> Needs to import a new module
+
+
+matrix = [
+    ['a', 'b'],
+    ['c', 'd']
+]
+
+matrix_copy = copy.deepcopy(matrix)
+matrix.pop()
+matrix_copy[0].append('z')
+print("Original Matrix:", matrix)
+print("Copy Matrix = ", matrix_copy)
+
+
+# combining data in lists
+
+lettersList = ['a', 'b', 'c']
+numbersList = [1, 2, 3]
+
+combination = lettersList + numbersList
+combination2 = [lettersList, numbersList]
+numbersList.extend(lettersList)
+
+print(combination)
+print(combination2)
+print(numbersList)
+
+# combining lists using zip() -> used to pair elements from all lists and returns an iterator which we can convert into a list of tuples
+
+lettersList = ['a', 'b', 'c']
+numbersList = [1, 2, 3]
+comb = zip(lettersList, numbersList)
+
+print(list(comb))
+
+#  Example of zip()
+
+ids = [101, 102, 103]
+names = ['Ali', 'Sara', 'John']
+
+print(list(zip(ids, names)))
+
+
+# Iterating through a list
+
+lettersList = ['a', 'b', 'c']
+
+for l in lettersList:
+    print(l)
+
+
+# enumerate -> gives the value and its index while looping
+
+lettersList = ['a', 'b', 'c']
+
+print(list(enumerate(lettersList)))
+
+for index, value in enumerate(lettersList):
+    print(index, value)
+
+
+# Reveresed -> returnss an iterator that flips the data order
+
+letters = ['a', 'b', 'c']
+print(list(reversed(letters)))
+
+for l in reversed(letters):
+    print(l)
+
+
+# zip() -> combines two or more sequences into pairs (tuples)
+
+numbers = [1, 2, 3]
+
+
+for l, n in (zip(letters, numbers)):
+    print(l, n)
+
+
+
+
 
