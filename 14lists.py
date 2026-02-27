@@ -241,6 +241,67 @@ for l, n in (zip(letters, numbers)):
     print(l, n)
 
 
+# map
+
+letters = ['a', 'b', 'c']
+numbers = ['1', '2', '3']
+
+print(list(map(str.upper, letters)))
+print(list(map(int, numbers)))
+
+
+# filter -> used in cleaning up data
+
+letters = ['a', 'b',None, '', 'c', False]
+items = ['sql', '123', 'python', '42']
+
+print(list(filter(None, letters)))
+#   OR
+print(list(filter(bool, letters)))
+print(list(filter(str.isalpha, items))) # filters only alphabets
+
+
+for i in filter(str.isalpha, items):
+    print(i)
+
+
+# lambda functions
+
+multiply = lambda x: x*2
+
+print(multiply(2))
+
+
+add = lambda x, y: x + y
+print(add(1,2))
+
+check = lambda i: i in "python"
+
+print(check('z'))
+
+
+# lambda + map
+
+prices = ['$12.50', '$9.99', '$100.00']
+
+print(list(map(lambda p: float(p.replace('$', '')), prices)))
+
+
+# lambda + filter
+
+prices = [120, 30, 300, 80] # remove all prices lower than 100
+students = [['Maria', 85],
+            ['Kumar', 90],
+            ['Max', 60]]    # list where student score is higher than 70
+
+print(list(filter(lambda p: p >= 100, prices)))
+print(list(filter(lambda row: row[1] > 70, students)))
+print(list(filter(lambda row: 'M' in row[0]  , students)))
+
+
+
+
+
 
 
 
