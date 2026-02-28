@@ -299,9 +299,28 @@ print(list(filter(lambda row: row[1] > 70, students)))
 print(list(filter(lambda row: 'M' in row[0]  , students)))
 
 
+# List Comprehension
+
+domains = ['www.google.com', 
+           'openai.com',
+           'localhost',
+           'WWW.DATAWITHEVAN.COM']  # clean the dats
 
 
+# solution -> using list comprehension
 
+cleaned = [
+    # Data Transformation
+    d.lower().replace('www.', '')
+    # For Loop
+    for d in domains
+    # Data Filtering
+    if '.' in d 
+
+
+]
+
+print(cleaned)
 
 
 
